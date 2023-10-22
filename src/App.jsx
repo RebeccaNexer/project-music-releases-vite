@@ -1,7 +1,20 @@
+import { Header } from "./components/Header";
+import { Album } from "./components/Album";
 import data from "./data.json";
 
-console.log(data);
-
 export const App = () => {
-  return <div>Find me in src/app.jsx!</div>;
+  const albums = data.albums.items;
+  return (
+  <div className="app">
+    <Header header={"Album and single releases"} />
+    <div className="albumContainer">
+      {albums.map((album) => (
+        <Album key={album.id} albumInfo={album}/>
+      ))}
+    </div>
+  </div>
+  );
 };
+
+
+export default App;

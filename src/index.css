@@ -1,13 +1,81 @@
-:root {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: black;
+  font-family: Helvetica;
+}
+header {
+  display: contents;
+}
+a {
+  text-decoration: none;
+}
+  .albumCover {
+   padding: 0px 20px;
+  }
+  .albumContainer {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+  }
+  @media (min-width: 667px) {
+   .albumContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  @media (min-width: 1025px) {
+    .albumContainer {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+    }
+  }
+
+  .albumNameColor {
+    font-size: 14px;
+    color: white;
+  }
+
+  .artistNameColor {
+    color:#a0a0a0;
+  }
+
+  .heartIcon {
+    width: 15px;
+    display: none;
+  }
+
+.coverWrapper {
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+}    
+.coverWrapper:hover {
+  .icons {
+    display: block;
+  }
+  opacity: 0.5;
+  .coverImage .icons {
+    position: absolute;
+    top:45%;
+    left:33%;
+    display: flex;
+    gap: 10px;
+  }
+  .coverImage {
+    position: relative;
+  }
+  .coverImage img {
+    display: block;
+  }
+  .icons {
+    display: block;
+  }
+}
+
+.icons {
+  display: none;
 }
