@@ -5,6 +5,7 @@
   color: white;
   background-color: black;
   font-family: Helvetica;
+  padding: 10px;
 }
 header {
   display: contents;
@@ -13,25 +14,18 @@ a {
   text-decoration: none;
 }
   .albumCover {
+   margin: 5px;
    padding: 0px 20px;
+    @media (min-width: 1025px) {
+        flex: 1 0 21%;
+    } 
   }
   .albumContainer {
-    display: grid;
-    grid-template-columns: auto;
-    gap: 20px;
-  }
-  @media (min-width: 667px) {
-   .albumContainer {
-    display: grid;
-    grid-template-columns: auto auto auto;
-  }
-}
-
-  @media (min-width: 1025px) {
-    .albumContainer {
-      display: grid;
-      grid-template-columns: auto auto auto auto;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 1700px;
   }
 
   .albumNameColor {
@@ -43,6 +37,10 @@ a {
     color:#a0a0a0;
   }
 
+  .albumName {
+    width: 70%;
+  }
+
   .heartIcon {
     width: 15px;
     display: none;
@@ -50,12 +48,13 @@ a {
 
 .coverWrapper {
   display: flex;
-  justify-content: center;
   opacity: 1;
 }    
 .coverWrapper:hover {
   .icons {
     display: block;
+    transition: all .2s ease-in-out; 
+
   }
   opacity: 0.5;
   .coverImage .icons {
@@ -79,3 +78,12 @@ a {
 .icons {
   display: none;
 }
+
+.icons { 
+  transition: all .2s ease-in-out; 
+  }
+  
+  .icons:hover { 
+  cursor: pointer;
+  transform: scale(1.1); 
+  }
