@@ -14,8 +14,7 @@ a {
   text-decoration: none;
 }
   .albumCover {
-   margin: 5px;
-   padding: 0px 20px;
+   padding: 10px 20px;
     @media (min-width: 1025px) {
         flex: 1 0 21%;
     } 
