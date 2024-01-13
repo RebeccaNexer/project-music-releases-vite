@@ -7,11 +7,11 @@ export const CoverImage = ({ images }) => {
     return (
         <div className="coverWrapper">
         <div className="coverImage">
-        <img className="img" src={images} alt="cover image" height="250" width="250" />
+        <img className="imgCover" src={images} alt="cover image" height="250" width="250" />
         <span className="icons">
-                <img src={heart} alt="heart icon" className='heartIcon'/>
-                <img src={play} alt="play icon" className='playIcon'/>
-                <img src={dots} alt="dots icon" className='dotsIcon' />
+                <img src={heart} alt="heart icon" className='heartIcon icon'/>
+                <img src={play} alt="play icon" className='playIcon icon'/>
+                <img src={dots} alt="dots icon" className='dotsIcon icon' />
             </span> 
             </div>
         </div>

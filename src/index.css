@@ -1,32 +1,46 @@
 .app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: white;
   background-color: black;
   font-family: Helvetica;
-  padding: 10px;
+  font-weight: bold;
 }
 header {
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
 }
 a {
   text-decoration: none;
 }
-  .albumCover {
-   padding: 10px 20px;
-    @media (min-width: 1025px) {
-        flex: 1 0 21%;
-    } 
-  }
+a:hover {
+  text-decoration: underline;
+}
+
   .albumContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: auto;
-    max-width: 1700px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+    justify-items: center;
+  }
+  
+  @media (min-width: 667px) {
+    .albumContainer {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .albumContainer {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      padding: 0 40px;
+    }
   }
 
+  .albumCover {
+    margin: 15px;
+  }
+  
   .albumNameColor {
     font-size: 14px;
     color: white;
@@ -37,52 +51,53 @@ a {
   }
 
   .albumName {
-    width: 70%;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-  .heartIcon {
-    width: 15px;
+  .icon {
+    width: 38px;
     display: none;
   }
 
 .coverWrapper {
-  display: flex;
+  position: relative;
   opacity: 1;
-}    
-.coverWrapper:hover {
-  .icons {
-    display: block;
-    transition: all .2s ease-in-out; 
+}
 
-  }
-  opacity: 0.5;
-  .coverImage .icons {
-    position: absolute;
-    top:45%;
-    left:33%;
-    display: flex;
-    gap: 10px;
-  }
-  .coverImage {
-    position: relative;
-  }
+
+.coverImage:hover > img {
+  opacity:0.5;
   .coverImage img {
     display: block;
   }
-  .icons {
+}
+
+.coverImage:hover > .icons {
+  opacity: 1;
+   img {
     display: block;
   }
 }
 
-.icons {
-  display: none;
+.coverImage .icons {
+  position: absolute;
+  top:45%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  gap: 25px;
+  margin: 0px;
 }
 
-.icons { 
-  transition: all .2s ease-in-out; 
-  }
-  
-  .icons:hover { 
+.imgCover {
+  height: auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+  .icon:hover { 
   cursor: pointer;
-  transform: scale(1.1); 
-  }
+  scale: 1.1;
+}
